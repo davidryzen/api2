@@ -30,34 +30,80 @@
 
             //请求的方法
          if(!isset($_GET['action'])){
-             $output['data']=null;
+             /*$output['data']=null;
              $output['info']="请传入请求的方法action参数";
              $output['code']="-203";
-             exit(json_encode($output,JSON_UNESCAPED_UNICODE));
+             exit(json_encode($output,JSON_UNESCAPED_UNICODE));*/
+             returnMessage(null,"请传入请求的方法action参数",-203);
          }
-          $action=$_GET['action']?$_GET['action']:"";
-
-            //判断参数action
-             if(empty($action)){
-                 $output['data']=null;
-                 $output['info']="请输入请求的方法action参数";
-                 $output['code']="-201";
-                 exit(json_encode($output,JSON_UNESCAPED_UNICODE));
-             }
+          $action=$_GET['action'];
 
            if($action=="all"){//得到所有的用户行程
                getAllUserInfo("xingcheng");
 
-           }elseif($action=="all"){//具体获取某一个用户的行程
-               if(!isset($_GET['id']||!isset($_GET['zid'])){
-                   
+           }elseif($action=="one"){//具体获取某一个用户的行程
+               if(!isset($_GET['id'])||!isset($_GET['zid'])){
+                   returnMessage(null,"请携带参数id或zid",-204);
                }
                //获取参数id
-               $id=$_GET['id']?$_GET['id']:0;
+               $id=$_GET['id'];
                //获取参数zid
-               $id=$_GET['zid']?$_GET['zid']:0;
+               $zid=$_GET['zid'];
+              $result= getOneUserInfo("xingcheng",$id,$zid);
+           }elseif($action=="oneSchedule"){//通过xid获取行程安排
+               if(!isset($_GET['xid'])){
+                   returnMessage(null,"请携带参数xid",-205);
+               }
+               //获取参数xid
+               $xid=$_GET['xid'];
+               getOneSchedule("xingcheng_data",$xid);
            }
 
+         //通过xid获取行程安排的方法
+        function getOneSchedule($table,$xid){
+            //得到model对象
+            $modelObj=new Model($table);
+            $tableData= $modelObj->table;
+            //编写sql语句
+            $sql="select title,url,vip,shijian,miaoshu,context from $tableData where xid=$xid";
+           $result= $modelObj->db->getAll($sql);
+            if(empty($result)){
+                /*$output['data']=null;
+                $output['info']="请求所有用户行程的数据出错";
+                $output['code']="-202"
+                exit(json_encode($output,JSON_UNESCAPED_UNICODE));;*/
+                returnMessage(null,"请求某个用户行程安排的数据出错",-205);
+            }
+            returnMessage($result,"请求行程安排成功",203);
+        }
+        //获取所某个用户数据
+        function getOneUserInfo($table,$id,$zid){
+            //得到model对象
+            $modelObj=new Model($table);
+            $tableData= $modelObj->table;
+        //               exit($tableData);
+            //编写sql语句
+            $sql="select xid,title,keyboard,titlepic,pic,miaoshu from $tableData where id=$id and zid=$zid";
+        //               exit($sql);
+            //调用得到所有数据的方法
+            $result= $modelObj->db->getAll($sql);
+            if(empty($result)){
+                /*$output['data']=null;
+                $output['info']="请求所有用户行程的数据出错";
+                $output['code']="-202"
+                exit(json_encode($output,JSON_UNESCAPED_UNICODE));;*/
+                returnMessage(null,"请求某个用户行程的数据出错",-202);
+            }
+
+            //查询成功
+           /* $output['data']=$result;
+            $output['info']="请求此用户行程的数据success";
+            $output['code']="201";
+            exit(json_encode($output,JSON_UNESCAPED_UNICODE));*/
+
+            returnMessage($result,请求此用户行程的数据success,201);
+
+        }
 
        //获取所有的用户数据
         function getAllUserInfo($table){
@@ -71,18 +117,36 @@
             //调用得到所有数据的方法
             $result= $modelObj->db->getAll($sql);
             if(empty($result)){
-                $output['data']=null;
+                /*$output['data']=null;
                 $output['info']="请求所有用户行程的数据出错";
-                $output['code']="-202";
-                exit(json_encode($output,JSON_UNESCAPED_UNICODE));
+                $output['code']="-202"
+                exit(json_encode($output,JSON_UNESCAPED_UNICODE));;*/
+                returnMessage(null,"请求所有用户行程的数据出错",-202);
             }
 
             //查询成功
-            $output['data']=$result;
+           /* $output['data']=$result;
             $output['info']="请求所有用户行程的数据success";
             $output['code']="200";
-            exit(json_encode($output,JSON_UNESCAPED_UNICODE));
+            exit(json_encode($output,JSON_UNESCAPED_UNICODE));*/
+            returnMessage($result,请求所有用户行程的数据success,"200");
+
         }
+
+       //返回成功的数据给用户的方法
+      function returnMessage($data,$info,$code){
+          $output['data']=$data;
+          $output['info']="$info";
+          $output['code']="$code";
+          exit(json_encode($output,JSON_UNESCAPED_UNICODE));
+      }
+/*//如果用户格式和数据输入错误的方法
+      function returnUserError($data,$info,$code){
+          $output['data']=$data;
+          $output['info']="$info";
+          $output['code']="$code";
+          exit(json_encode($output,JSON_UNESCAPED_UNICODE));
+      }*/
             //获取token
        function getToken($appid,$appkey){
            //创建一个curl句柄

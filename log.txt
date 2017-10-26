@@ -30,3 +30,18 @@
 [2017-10-26 16:02:02] set names utf8
 [2017-10-26 16:02:02] DESC mj_xingcheng
 [2017-10-26 16:02:02] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-26 17:13:36] set names utf8
+[2017-10-26 17:13:36] DESC mj_xingcheng
+[2017-10-26 17:13:36] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=71 and zid=427
+[2017-10-26 17:14:45] set names utf8
+[2017-10-26 17:14:45] DESC mj_xingcheng
+[2017-10-26 17:14:45] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=71 and zid=427
+[2017-10-26 17:15:11] set names utf8
+[2017-10-26 17:15:11] DESC mj_xingcheng
+[2017-10-26 17:15:11] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=43 and zid=238
+[2017-10-26 17:15:37] set names utf8
+[2017-10-26 17:15:37] DESC mj_xingcheng
+[2017-10-26 17:15:37] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=30 and zid=130
+[2017-10-26 17:33:49] set names utf8
+[2017-10-26 17:33:49] DESC mj_xingcheng_data
+[2017-10-26 17:33:49] select title,url,vip,shijian,miaoshu,context from mj_xingcheng_data where xid=49
