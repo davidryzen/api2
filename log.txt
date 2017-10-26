@@ -1,0 +1,32 @@
+[2017-10-26 07:40:48] set names utf8
+[2017-10-26 07:40:48] DESC miji_
+[2017-10-26 07:41:37] set names utf8
+[2017-10-26 07:41:37] DESC miji_xingcheng
+[2017-10-26 15:45:16] set names utf8
+[2017-10-26 15:45:16] DESC miji_xingcheng
+[2017-10-26 15:46:05] set names utf8
+[2017-10-26 15:46:05] DESC mj_xingcheng
+[2017-10-26 15:47:28] set names utf8
+[2017-10-26 15:47:28] DESC mj_xingcheng
+[2017-10-26 15:48:04] set names utf8
+[2017-10-26 15:48:04] DESC mj_xingcheng
+[2017-10-26 15:50:54] set names utf8
+[2017-10-26 15:50:54] DESC mj_xingcheng
+[2017-10-26 15:52:20] set names utf8
+[2017-10-26 15:52:20] DESC mj_xingcheng
+[2017-10-26 15:52:49] set names utf8
+[2017-10-26 15:52:49] DESC mj_xingcheng
+[2017-10-26 15:53:50] set names utf8
+[2017-10-26 15:53:50] DESC mj_xingcheng
+[2017-10-26 15:53:50] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-26 15:56:04] set names utf8
+[2017-10-26 15:56:04] DESC mj_xingcheng
+[2017-10-26 15:57:30] set names utf8
+[2017-10-26 15:57:30] DESC mj_xingcheng
+[2017-10-26 15:57:30] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-26 16:01:50] set names utf8
+[2017-10-26 16:01:50] DESC mj_xingcheng
+[2017-10-26 16:01:50] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-26 16:02:02] set names utf8
+[2017-10-26 16:02:02] DESC mj_xingcheng
+[2017-10-26 16:02:02] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
