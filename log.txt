@@ -45,3 +45,48 @@
 [2017-10-26 17:33:49] set names utf8
 [2017-10-26 17:33:49] DESC mj_xingcheng_data
 [2017-10-26 17:33:49] select title,url,vip,shijian,miaoshu,context from mj_xingcheng_data where xid=49
+[2017-10-27 10:06:40] set names utf8
+[2017-10-27 10:06:40] DESC mj_xingcheng
+[2017-10-27 10:06:40] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-27 10:12:27] set names utf8
+[2017-10-27 10:12:27] DESC mj_xingcheng
+[2017-10-27 10:12:27] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-27 10:13:50] set names utf8
+[2017-10-27 10:13:50] DESC mj_xingcheng
+[2017-10-27 10:13:50] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-27 10:25:11] set names utf8
+[2017-10-27 10:25:11] DESC mj_xingcheng
+[2017-10-27 10:25:11] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-27 10:27:46] set names utf8
+[2017-10-27 10:27:47] DESC mj_xingcheng
+[2017-10-27 10:27:47] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=71 and zid=427
+[2017-10-27 10:28:27] set names utf8
+[2017-10-27 10:28:27] DESC mj_xingcheng
+[2017-10-27 10:28:27] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=71 and zid=427
+[2017-10-27 10:28:54] set names utf8
+[2017-10-27 10:28:54] DESC mj_xingcheng_data
+[2017-10-27 10:28:54] select title,url,vip,shijian,miaoshu,context from mj_xingcheng_data where xid=49
+[2017-10-27 10:58:20] set names utf8
+[2017-10-27 10:58:20] DESC mj_xingcheng
+[2017-10-27 10:58:20] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-27 10:59:07] set names utf8
+[2017-10-27 10:59:07] DESC mj_xingcheng
+[2017-10-27 10:59:08] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-27 10:59:29] set names utf8
+[2017-10-27 10:59:29] DESC mj_xingcheng
+[2017-10-27 10:59:29] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-27 11:00:24] set names utf8
+[2017-10-27 11:00:24] DESC mj_xingcheng
+[2017-10-27 11:00:24] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-27 11:02:18] set names utf8
+[2017-10-27 11:02:18] DESC mj_xingcheng
+[2017-10-27 11:02:18] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-27 11:02:45] set names utf8
+[2017-10-27 11:02:45] DESC mj_xingcheng
+[2017-10-27 11:02:45] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-27 11:12:57] set names utf8
+[2017-10-27 11:12:57] DESC mj_xingcheng
+[2017-10-27 11:12:57] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-10-27 11:14:30] set names utf8
+[2017-10-27 11:14:30] DESC mj_xingcheng
+[2017-10-27 11:14:30] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng

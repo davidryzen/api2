@@ -36,7 +36,7 @@
              exit(json_encode($output,JSON_UNESCAPED_UNICODE));*/
              returnMessage(null,"请传入请求的方法action参数",-203);
          }
-          $action=$_GET['action'];
+          $action=strtolower($_GET['action']) ;
 
            if($action=="all"){//得到所有的用户行程
                getAllUserInfo("xingcheng");
@@ -50,13 +50,15 @@
                //获取参数zid
                $zid=$_GET['zid'];
               $result= getOneUserInfo("xingcheng",$id,$zid);
-           }elseif($action=="oneSchedule"){//通过xid获取行程安排
+           }elseif($action=="oneschedule"){//通过xid获取行程安排
                if(!isset($_GET['xid'])){
                    returnMessage(null,"请携带参数xid",-205);
                }
                //获取参数xid
                $xid=$_GET['xid'];
                getOneSchedule("xingcheng_data",$xid);
+           }else{
+               returnMessage(null,"请携带参数action的值不存在",-206);
            }
 
          //通过xid获取行程安排的方法
@@ -101,7 +103,7 @@
             $output['code']="201";
             exit(json_encode($output,JSON_UNESCAPED_UNICODE));*/
 
-            returnMessage($result,请求此用户行程的数据success,201);
+            returnMessage($result,"请求此用户行程的数据success",201);
 
         }
 
@@ -123,21 +125,31 @@
                 exit(json_encode($output,JSON_UNESCAPED_UNICODE));;*/
                 returnMessage(null,"请求所有用户行程的数据出错",-202);
             }
+//             $picArray=$result['pic'];
+//            var_dump(count($result));die;
 
+            for($i=0;$i<count($result);++$i){
+             /*  if(strpos($result[$i]['pic'],"||||||")){
+
+               }*/
+                $result[$i]['pic']=explode("||||||",$result[$i]['pic']);
+//                var_dump($result[$i]['pic']);
+            }
+//            die;
             //查询成功
            /* $output['data']=$result;
             $output['info']="请求所有用户行程的数据success";
             $output['code']="200";
             exit(json_encode($output,JSON_UNESCAPED_UNICODE));*/
-            returnMessage($result,请求所有用户行程的数据success,"200");
+            returnMessage($result,"请求所有用户行程的数据success",200);
 
         }
 
        //返回成功的数据给用户的方法
       function returnMessage($data,$info,$code){
-          $output['data']=$data;
-          $output['info']="$info";
-          $output['code']="$code";
+          $output['result']=$data;
+          $output['ms']="$info";
+          $output['status']="$code";
           exit(json_encode($output,JSON_UNESCAPED_UNICODE));
       }
 /*//如果用户格式和数据输入错误的方法
