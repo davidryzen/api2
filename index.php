@@ -65,10 +65,146 @@
            }elseif($action=="updateschedule"){
 
                updateSchedule("xingcheng",$xid);
+           }elseif($action=="onescheduledetail"){
+//               var_dump($_POST);die;
+               onescheduledetail("xingcheng_data");
+           }elseif($action=="deleteonescheduledetail"){
+               deleteonescheduledetail("xingcheng_data");
+           }elseif($action=="updateonescheduledetail"){
+               //得到行程id用于更新
+               $xcid=$_POST['xcid'];
+               updateonescheduledetail("xingcheng_data",$xcid);
            }else{
                returnMessage(null,"携带参数action的值". $action."不存在",-206);
            }
+            //更新某条详细行程
+           function updateonescheduledetail($table,$xcid){
+               $xid=$_POST['xid'];
+               $vip=$_POST['vip'];
+               $shijian=$_POST['shijian'];
+               $px=$_POST['px'];
+               $miaoshu=$_POST['miaoshu'];
+               $title=$_POST['title'];
+               $url=$_POST['link'];
+               $context_1=$_POST['context_1'];
+               $context_2=$_POST['context_2'];
+               $context_3=$_POST['context_3'];
+               $context_4=$_POST['context_4'];
 
+               $context_5=$_POST['context_5'];
+
+               $context=array();
+
+               //循环次数
+               $length=count($context_1);
+
+               $m=0;
+               for($i=0;$i<$length;++$i){
+
+                   $context[$i]=array('shijian'=>urlencode($context_1[$i]),'name'=>urlencode($context_2[$i]),'gongneng'=>urlencode($context_3[$i]),'zt'=>urlencode($context_4[$i]));
+                   if($context_4[$i]==0){
+//                    $context[]=array('zhi'=>"");
+                       $context[$i]["zhi"]="";
+                   }else{
+//                    $context[]=array('zhi'=>$context_5[$m]);
+                       if($context_4[$i]==3){
+                           $context[$i]["zhi"]=$context_5[$i];continue;
+                       }
+                       $context[$i]["zhi"]=$context_5[$m];
+                       ++$m;
+                   }
+               }
+               $context=json_encode($context);
+               $context=urldecode($context);
+               //得到model对象
+               $modelObj=new Model($table);
+               $list=array('title'=>$title,"url"=>$url,"vip"=>$vip,'shijian'=>$shijian,'miaoshu'=>$miaoshu,"px"=>$px,"context"=>$context);
+               $where="xcid=".$xcid;
+               $result= $modelObj-> update($list,$where);
+               if(empty($result)){
+                   /*$output['data']=null;
+                   $output['info']="请求所有用户行程的数据出错";
+                   $output['code']="-202"
+                   exit(json_encode($output,JSON_UNESCAPED_UNICODE));;*/
+                   returnMessage(null,"更新此次详细行程失败",-212);
+               }
+               returnMessage($result,"更新此次详细行程成功",212);
+           }
+           //删除某条详细行程
+           function deleteonescheduledetail($table){
+               //得到行程id用于删除
+                $xcid=$_POST['xcid'];
+               //得到model对象
+               $modelObj=new Model($table);
+               //删除行程
+               $result= $modelObj->delete($xcid);
+               if(empty($result)){
+                   /*$output['data']=null;
+                   $output['info']="请求所有用户行程的数据出错";
+                   $output['code']="-202"
+                   exit(json_encode($output,JSON_UNESCAPED_UNICODE));;*/
+                   returnMessage(null,"删除详细行程失败",-211);
+               }
+               returnMessage($result,"删除详细行程成功",211);
+
+           }
+         //添加一条行程的详细信息
+        function onescheduledetail($table){
+             //接受用户传递过来的信息
+            $action=$_POST['action'];
+//            $id=$_POST['id'];
+//            $zid=$_POST['zid'];
+            $xid=$_POST['xid'];
+            $vip=$_POST['vip'];
+            $shijian=$_POST['shijian'];
+            $px=$_POST['px'];
+            $miaoshu=$_POST['miaoshu'];
+            $title=$_POST['title'];
+            $url=$_POST['link'];
+            $context_1=$_POST['context_1'];
+            $context_2=$_POST['context_2'];
+            $context_3=$_POST['context_3'];
+            $context_4=$_POST['context_4'];
+
+            $context_5=$_POST['context_5'];
+
+            $context=array();
+
+            //循环次数
+            $length=count($context_1);
+
+            $m=0;
+            for($i=0;$i<$length;++$i){
+
+                $context[$i]=array('shijian'=>urlencode($context_1[$i]),'name'=>urlencode($context_2[$i]),'gongneng'=>urlencode($context_3[$i]),'zt'=>urlencode($context_4[$i]));
+                if($context_4[$i]==0){
+//                    $context[]=array('zhi'=>"");
+                      $context[$i]["zhi"]="";
+                }else{
+//                    $context[]=array('zhi'=>$context_5[$m]);
+                   if($context_4[$i]==3){
+                       $context[$i]["zhi"]=$context_5[$i];continue;
+                   }
+                    $context[$i]["zhi"]=$context_5[$m];
+                    ++$m;
+                }
+            }
+            $context=json_encode($context);
+            $context=urldecode($context);
+            //得到model对象
+            $modelObj=new Model($table);
+            $list=array('xid'=>$xid,'title'=>$title,"url"=>$url,"vip"=>$vip,'shijian'=>$shijian,'miaoshu'=>$miaoshu,"px"=>$px,"context"=>$context);
+            $result= $modelObj-> insert($list);
+            if(empty($result)){
+                /*$output['data']=null;
+                $output['info']="请求所有用户行程的数据出错";
+                $output['code']="-202"
+                exit(json_encode($output,JSON_UNESCAPED_UNICODE));;*/
+                returnMessage(null,"添加此次详细行程失败",-210);
+            }
+            returnMessage($result,"添加此次详细行程成功",210);
+
+        }
            //修改行程
          function updateSchedule($table){
              //接受用户上传的文件
