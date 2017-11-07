@@ -1,14 +1,15 @@
 <?php
 
 class Mysql{
-	protected $conn = false;  //数据库连接资源
+	public $conn = false;  //数据库连接资源
 	protected $sql;           //sql语句
+    private static $_instance;//数据库实例
 
 	/**
 	 * 构造函数，负责连接服务器、选择数据库、设置字符集等
 	 * @param $config string 配置数组
 	 */
-	public function __construct($config = array()){
+	private function __construct($config = array()){
 		$host = isset($config['host'])? $config['host'] : 'localhost';
 		$user = isset($config['user'])? $config['user'] : 'root';
 		$password = isset($config['password'])? $config['password'] : '';
@@ -16,11 +17,19 @@ class Mysql{
 		$port = isset($config['port'])? $config['port'] : '3306';
 		$charset = isset($config['charset'])? $config['charset'] : 'utf8';
 
-		$this->conn = mysql_connect("$host:$port",$user,$password) or die('数据库连接错误');
-		mysql_select_db($dbname,$this->conn) or die('数据库选择错误');
+		$this->conn = mysqli_connect("$host:$port",$user,$password) or die('数据库连接错误');
+		mysqli_select_db($this->conn,$dbname) or die('数据库选择错误');
 		$this->setChar($charset);
 	}
-
+   //提供一个公共的得到这个私有数据库实例的方法
+    public static function getInstance($array){
+	    //判断本类的实例是否创建
+        if(!self::$_instance instanceof self){//如果不是就创建
+	    self::$_instance=new self($array);//创建一个本类的实例供外界调用
+        }
+        //返回这个实例给外界
+        return self::$_instance;
+    }
 	/**
 	 * 设置字符集
 	 * @access private
@@ -45,7 +54,7 @@ class Mysql{
 		}
 
 		$this->sql = $sql;
-		$result = mysql_query($this->sql,$this->conn);
+		$result = mysqli_query($this->conn,$this->sql);
 
 		if (! $result) {
 			die($this->errno().':'.$this->error().'<br />出错语句为'.$this->sql.'<br />');
@@ -61,7 +70,7 @@ class Mysql{
 	 */
 	public function getOne($sql){
 		$result = $this->query($sql);
-		$row = mysql_fetch_row($result);
+		$row = mysqli_fetch_row($result);
 		if ($row) {
 			return $row[0];
 		} else {
@@ -77,7 +86,7 @@ class Mysql{
 	 */
 	public function getRow($sql){
 		if ($result = $this->query($sql)) {
-			$row = mysql_fetch_assoc($result);
+			$row = mysqli_fetch_assoc($result);
 			return $row;
 		} else {
 			return false;
@@ -93,7 +102,7 @@ class Mysql{
 	public function getAll($sql){
 		$result = $this->query($sql);
 		$list = array();
-		while ($row = mysql_fetch_assoc($result)){
+		while ($row = mysqli_fetch_assoc($result)){
 			$list[] = $row;
 		}
 		return $list;
@@ -108,7 +117,7 @@ class Mysql{
 	public function getCol($sql){
 		$result = $this->query($sql);
 		$list = array();
-		while ($row = mysql_fetch_row($result)) {
+		while ($row = mysqli_fetch_row($result)) {
 			$list[] = $row[0];
 		}
 		return $list;
@@ -119,7 +128,7 @@ class Mysql{
 	 * 获取上一步insert操作产生的id
 	 */
 	public function getInsertId(){
-		return mysql_insert_id($this->conn);
+		return mysqli_insert_id($this->conn);
 	}
 	/**
 	 * 获取错误号
@@ -127,7 +136,7 @@ class Mysql{
 	 * @return 错误号
 	 */
 	public function errno(){
-		return mysql_errno($this->conn);
+		return mysqli_errno($this->conn);
 	}
 
 	/**
@@ -136,7 +145,7 @@ class Mysql{
 	 * @return 错误private信息
 	 */
 	public function error(){
-		return mysql_error($this->conn);
+		return mysqli_error($this->conn);
 	}
 
 }

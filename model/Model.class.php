@@ -13,7 +13,8 @@ class Model{
 		$dbconfig['port'] = $GLOBALS['config']['port'];
 		$dbconfig['charset'] = $GLOBALS['config']['charset'];
 
-		$this->db = new Mysql($dbconfig);
+//		$this->db = new Mysql($dbconfig);
+        $this->db = Mysql::getInstance($dbconfig);
 		$this->table = $GLOBALS['config']['prefix'] . $table;
 
 		//调用getFields字段
@@ -100,7 +101,7 @@ class Model{
 
 		if ($this->db->query($sql)) {
 			# 成功，并判断受影响的记录数
-			if ($rows = mysql_affected_rows()) {
+			if ($rows = mysqli_affected_rows($this->db->conn)) {
 				# 有受影响的记录数
 				return $rows;
 			} else {
@@ -135,7 +136,7 @@ class Model{
 
 		if ($this->db->query($sql)) {
 			# 成功，并判断受影响的记录数
-			if ($rows = mysql_affected_rows()) {
+			if ($rows = mysqli_affected_rows($this->db->conn)) {
 				# 有受影响的记录
 				return $rows;
 			} else {

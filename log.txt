@@ -111,3 +111,158 @@
 [2017-10-30 12:04:36] set names utf8
 [2017-10-30 12:04:37] DESC mj_xingcheng
 [2017-10-30 12:04:37] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-11-06 15:05:39] set names utf8
+[2017-11-06 15:05:39] DESC mj_xingcheng
+[2017-11-06 15:05:39] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-11-06 15:10:26] set names utf8
+[2017-11-06 15:10:26] DESC mj_xingcheng
+[2017-11-06 15:10:26] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-11-06 15:11:05] set names utf8
+[2017-11-06 15:11:05] DESC mj_xingcheng
+[2017-11-06 15:11:05] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-11-06 15:19:11] set names utf8
+[2017-11-06 15:19:12] DESC mj_xingcheng
+[2017-11-06 15:19:12] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng
+[2017-11-06 15:42:47] set names utf8
+[2017-11-06 15:42:47] DESC mj_xingcheng
+[2017-11-06 15:42:47] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=71 and zid=427
+[2017-11-06 15:43:49] set names utf8
+[2017-11-06 15:43:49] DESC mj_xingcheng
+[2017-11-06 15:43:49] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=71 and zid=427
+[2017-11-06 15:45:25] set names utf8
+[2017-11-06 15:45:25] DESC mj_xingcheng
+[2017-11-06 15:45:25] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=0 and zid=427
+[2017-11-06 15:49:51] set names utf8
+[2017-11-06 15:49:51] DESC mj_xingcheng
+[2017-11-06 15:49:51] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=0 and zid=427
+[2017-11-06 15:57:22] set names utf8
+[2017-11-06 15:57:22] DESC mj_xingcheng
+[2017-11-06 15:57:22] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=71 and zid=427
+[2017-11-06 16:07:06] set names utf8
+[2017-11-06 16:07:06] DESC mj_xingcheng_data
+[2017-11-06 16:07:06] select title,url,vip,shijian,miaoshu,context from mj_xingcheng_data where xid=49
+[2017-11-06 16:11:46] set names utf8
+[2017-11-06 16:11:46] DESC mj_xingcheng_data
+[2017-11-06 16:11:47] select title,url,vip,shijian,miaoshu,context from mj_xingcheng_data where xid=49
+[2017-11-06 16:12:28] set names utf8
+[2017-11-06 16:12:28] DESC mj_xingcheng_data
+[2017-11-06 16:12:29] select title,url,vip,shijian,miaoshu,context from mj_xingcheng_data where xid=49
+[2017-11-06 16:13:36] set names utf8
+[2017-11-06 16:13:36] DESC mj_xingcheng_data
+[2017-11-06 16:13:36] select title,url,vip,shijian,miaoshu,context from mj_xingcheng_data where xid=45
+[2017-11-06 17:06:35] set names utf8
+[2017-11-06 17:06:35] DESC mj_
+[2017-11-06 17:11:51] set names utf8
+[2017-11-06 17:11:51] DESC mj_xingcheng
+[2017-11-06 17:11:51] INSERT INTO `mj_xingcheng` (`id`,`zid`,`jiage`,`title`,`keyboard`,`titlepic`,`pic`,`miaoshu`,`px`,`zt`,`time`) VALUES ('33','23','','','','','','','','','1509959511')
+[2017-11-06 17:12:26] set names utf8
+[2017-11-06 17:12:26] DESC mj_xingcheng
+[2017-11-06 17:12:26] INSERT INTO `mj_xingcheng` (`id`,`zid`,`jiage`,`title`,`keyboard`,`titlepic`,`pic`,`miaoshu`,`px`,`zt`,`time`) VALUES ('33','23','','','','','','','','','1509959546')
+[2017-11-06 17:53:04] set names utf8
+[2017-11-06 17:53:04] DESC mj_xingcheng
+[2017-11-06 17:53:04] INSERT INTO `mj_xingcheng` () VALUES ()
+[2017-11-06 17:54:56] set names utf8
+[2017-11-06 17:54:56] DESC mj_xingcheng
+[2017-11-06 17:54:56] INSERT INTO `mj_xingcheng` (`id`,`zid`,`jiage`,`title`,`keyboard`,`titlepic`,`pic`,`miaoshu`,`px`,`zt`,`time`) VALUES ('33','23','','','','','','','','','1509962096')
+[2017-11-06 17:55:04] set names utf8
+[2017-11-06 17:55:04] DESC mj_xingcheng
+[2017-11-06 17:55:05] INSERT INTO `mj_xingcheng` (`id`,`zid`,`jiage`,`title`,`keyboard`,`titlepic`,`pic`,`miaoshu`,`px`,`zt`,`time`) VALUES ('334','235','','','','','','','','','1509962104')
+[2017-11-07 10:41:27] set names utf8
+[2017-11-07 10:41:27] DESC mj_xingcheng
+[2017-11-07 10:41:27] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit (1-1)*20,20
+[2017-11-07 10:44:17] set names utf8
+[2017-11-07 10:44:17] DESC mj_xingcheng
+[2017-11-07 10:44:17] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit (1-1)*20,20
+[2017-11-07 10:50:24] set names utf8
+[2017-11-07 10:50:24] DESC mj_xingcheng
+[2017-11-07 10:50:24] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-07 10:50:40] set names utf8
+[2017-11-07 10:50:40] DESC mj_xingcheng
+[2017-11-07 10:50:40] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 20,20
+[2017-11-07 11:03:11] set names utf8
+[2017-11-07 11:03:11] DESC mj_xingcheng
+[2017-11-07 11:03:11] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 20,20
+[2017-11-07 11:03:29] set names utf8
+[2017-11-07 11:03:29] DESC mj_xingcheng
+[2017-11-07 11:03:29] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit -20,20
+[2017-11-07 11:04:44] set names utf8
+[2017-11-07 11:04:44] DESC mj_xingcheng
+[2017-11-07 11:04:44] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit -20,20
+[2017-11-07 11:04:54] set names utf8
+[2017-11-07 11:04:54] DESC mj_xingcheng
+[2017-11-07 11:04:54] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit -20,20
+[2017-11-07 11:09:08] set names utf8
+[2017-11-07 11:09:08] DESC mj_xingcheng
+[2017-11-07 11:09:08] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 60,20
+[2017-11-07 11:09:21] set names utf8
+[2017-11-07 11:09:21] DESC mj_xingcheng
+[2017-11-07 11:09:21] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-07 11:11:29] set names utf8
+[2017-11-07 11:11:29] DESC mj_xingcheng
+[2017-11-07 11:11:29] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-07 11:11:39] set names utf8
+[2017-11-07 11:11:39] DESC mj_xingcheng
+[2017-11-07 11:11:40] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-07 11:11:46] set names utf8
+[2017-11-07 11:11:46] DESC mj_xingcheng
+[2017-11-07 11:11:46] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 20,20
+[2017-11-07 11:11:53] set names utf8
+[2017-11-07 11:11:53] DESC mj_xingcheng
+[2017-11-07 11:11:53] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 40,20
+[2017-11-07 11:17:00] set names utf8
+[2017-11-07 11:17:00] DESC mj_xingcheng
+[2017-11-07 11:17:00] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 40,20
+[2017-11-07 11:17:10] set names utf8
+[2017-11-07 11:17:10] DESC mj_xingcheng
+[2017-11-07 11:17:10] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 20,20
+[2017-11-07 11:17:52] set names utf8
+[2017-11-07 11:17:52] DESC mj_xingcheng
+[2017-11-07 11:17:53] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=71 and zid=427
+[2017-11-07 11:18:57] set names utf8
+[2017-11-07 11:18:57] DESC mj_xingcheng_data
+[2017-11-07 11:18:57] select title,url,vip,shijian,miaoshu,context from mj_xingcheng_data where xid=49
+[2017-11-07 11:30:39] set names utf8
+[2017-11-07 11:30:39] DESC mj_xingcheng
+[2017-11-07 11:30:39] INSERT INTO `mj_xingcheng` (`id`,`zid`,`jiage`,`title`,`keyboard`,`titlepic`,`pic`,`miaoshu`,`px`,`zt`,`time`) VALUES ('','','','','','','','','','','1510025439')
+[2017-11-07 13:30:44] set names utf8
+[2017-11-07 13:30:44] DESC mj_xingcheng
+[2017-11-07 13:30:44] DELETE FROM `mj_xingcheng` WHERE `xid`=63
+[2017-11-07 13:31:19] set names utf8
+[2017-11-07 13:31:19] DESC mj_xingcheng
+[2017-11-07 13:31:19] DELETE FROM `mj_xingcheng` WHERE `xid`=63
+[2017-11-07 13:34:27] set names utf8
+[2017-11-07 13:34:27] DESC mj_xingcheng
+[2017-11-07 13:34:27] DELETE FROM `mj_xingcheng` WHERE `xid`=63
+[2017-11-07 13:39:37] set names utf8
+[2017-11-07 13:39:37] DESC mj_xingcheng
+[2017-11-07 13:39:37] DELETE FROM `mj_xingcheng` WHERE `xid`=63
+[2017-11-07 13:41:26] set names utf8
+[2017-11-07 13:41:26] DESC mj_xingcheng
+[2017-11-07 13:41:26] DELETE FROM `mj_xingcheng` WHERE `xid`=63
+[2017-11-07 13:41:37] set names utf8
+[2017-11-07 13:41:37] DESC mj_xingcheng
+[2017-11-07 13:41:37] DELETE FROM `mj_xingcheng` WHERE `xid`=62
+[2017-11-07 14:07:30] set names utf8
+[2017-11-07 14:07:30] DESC mj_xingcheng
+[2017-11-07 14:07:30] INSERT INTO `mj_xingcheng` (`id`,`zid`,`jiage`,`title`,`keyboard`,`titlepic`,`pic`,`miaoshu`,`px`,`zt`,`time`) VALUES ('332','223','','','','','','','','','1510034850')
+[2017-11-07 14:08:21] set names utf8
+[2017-11-07 14:08:21] DESC mj_xingcheng
+[2017-11-07 14:08:21] UPDATE `mj_xingcheng` SET `jiage`='',`title`='太空旅行',`keyboard`='',`titlepic`='',`pic`='',`miaoshu`='',`px`='',`zt`='',`time`='1510034901' WHERE xid=63
+[2017-11-07 14:09:54] set names utf8
+[2017-11-07 14:09:54] DESC mj_xingcheng
+[2017-11-07 14:09:54] UPDATE `mj_xingcheng` SET `jiage`='',`title`='太空旅行',`keyboard`='',`titlepic`='',`pic`='',`miaoshu`='',`px`='',`zt`='',`time`='1510034994' WHERE xid=63
+[2017-11-07 14:33:13] set names utf8
+[2017-11-07 14:33:13] DESC mj_xingcheng_data
+[2017-11-07 14:33:13] select title,url,vip,shijian,miaoshu,context from mj_xingcheng_data where xid=49
+[2017-11-07 14:57:39] set names utf8
+[2017-11-07 14:57:39] DESC mj_xingcheng_data
+[2017-11-07 14:57:39] INSERT INTO `mj_xingcheng_data` (`xid`,`title`,`url`,`vip`,`shijian`,`miaoshu`,`px`,`context`) VALUES ('49','','','','','kakakakakakaak','','[{"shijian":"","name":"","gongneng":"","zt":"","zhi":""}]')
+[2017-11-07 15:11:32] set names utf8
+[2017-11-07 15:11:32] DESC mj_xingcheng_data
+[2017-11-07 15:11:32] DELETE FROM `mj_xingcheng_data` WHERE `xcid`=59
+[2017-11-07 15:12:15] set names utf8
+[2017-11-07 15:12:15] DESC mj_xingcheng_data
+[2017-11-07 15:12:15] DELETE FROM `mj_xingcheng_data` WHERE `xcid`=59
+[2017-11-07 15:12:51] set names utf8
+[2017-11-07 15:12:51] DESC mj_xingcheng_data
+[2017-11-07 15:12:51] DELETE FROM `mj_xingcheng_data` WHERE `xcid`=60
