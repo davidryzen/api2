@@ -88,3 +88,24 @@
 [2017-11-08 15:57:00] set names utf8
 [2017-11-08 15:57:00] DESC mj_xingcheng
 [2017-11-08 15:57:01] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-08 17:20:27] set names utf8
+[2017-11-08 17:20:27] DESC mj_xingcheng
+[2017-11-08 17:20:27] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-08 17:21:47] set names utf8
+[2017-11-08 17:21:48] DESC mj_xingcheng
+[2017-11-08 17:21:48] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-08 17:22:09] set names utf8
+[2017-11-08 17:22:09] DESC mj_xingcheng
+[2017-11-08 17:22:09] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-08 17:22:30] set names utf8
+[2017-11-08 17:22:30] DESC mj_xingcheng
+[2017-11-08 17:22:30] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-08 17:23:55] set names utf8
+[2017-11-08 17:23:55] DESC mj_xingcheng
+[2017-11-08 17:23:55] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-08 17:24:20] set names utf8
+[2017-11-08 17:24:20] DESC mj_xingcheng
+[2017-11-08 17:24:20] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-08 17:24:38] set names utf8
+[2017-11-08 17:24:38] DESC mj_xingcheng
+[2017-11-08 17:24:38] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20

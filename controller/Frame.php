@@ -8,7 +8,7 @@
 //接受用户的请求
 //$userRequestData=$_POST
 //var_dump($_SERVER);die;
-class Sche{
+class Frame{
     public static function run(){
         // echo "hello!!";
         self::init();
@@ -31,7 +31,7 @@ class Sche{
 //        var_dump($_POST);var_dump($_GET);die;
         $act_array=array("getAllAction","getOneAction","getOneScheduleAction","addOneAction","deleteOneAction","updateOneAction","addOneScheduleAction","deleteOneScheduleAction","updateOneScheduleAction");
 
-        $controller_array=array("ScheduleController");
+        $controller_array=array("ScheduleController","LittleToolsController");
         if(isset($_POST["act"])){
             $act=$_POST['act'].'Action';
         }else{

@@ -31,12 +31,12 @@ class Frame{
     private static  function index(){
 //得到的请求的方法
         $function=$_POST['function'];
-        $token=$_POST['token'];
+//        $token=$_POST['token'];
 //得到请求的数据表
 //$table=$_POST['mysqlTable'];
         $parameter=$_POST;
 //得到接口对象
-        $apiObj=new APIModel($token);
+       $apiObj=new APIModel(/*$token*/);
 //调用方法,得到数据
         $result=$apiObj->$function($parameter);
 //       返回数据

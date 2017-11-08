@@ -10,12 +10,12 @@
 class ScheduleController{
     public function __construct($appid,$appkey,$filepath,$confirmUrl){
         //生成token
-       $token= $this->getToken($appid,$appkey,$filepath);
+       /*$token= $this->getToken($appid,$appkey,$filepath);
        $data="token=$token";
         $result=$this->curlPost($confirmUrl,$data);
         if(!$result){
             $this-> returnMessage(null,"token验证失败或者失效",-10000);
-        }
+        }*/
 
 
     }
@@ -40,7 +40,7 @@ class ScheduleController{
         $data="table=xingcheng&function=getAllUserInfo&page=$page";
         //使用post请求接口
         $result=$this->curlPost($url,$data);
-//        var_dump($result);die;
+//       var_dump($result);die;
         $result=json_decode($result,true);
 //
         if(!isset($result)){

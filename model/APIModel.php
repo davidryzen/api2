@@ -7,12 +7,12 @@
  * 中间程序请求的接口
  */
   class APIModel{
-      public function __construct($token)
+      public function __construct(/*$token*/)
       {
         //验证token
-          $url="https://www.mijiweb.com/qcloud/OAuth/";
+         /* $url="https://www.mijiweb.com/qcloud/OAuth/";
           $data="action=jiaoyan&token=$token&xingwei=xingcheng";
-         $this-> curlPost($url,$data);
+         $this-> curlPost($url,$data);*/
       }
 
       //更新某条详细行程
