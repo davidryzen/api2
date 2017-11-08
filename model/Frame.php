@@ -8,7 +8,8 @@
 //接受用户的请求
 //$userRequestData=$_POST
 //var_dump($_SERVER);die;
-class Sche{
+class Frame{
+
     public static function run(){
         // echo "hello!!";
         self::init();
@@ -28,58 +29,20 @@ class Sche{
         include_once "/dl/API/schedule2/model/Mysql.class.php";
     }
     private static  function index(){
-//        var_dump($_POST);var_dump($_GET);die;
-        $act_array=array("getAllAction","getOneAction","getOneScheduleAction","addOneAction","deleteOneAction","updateOneAction","addOneScheduleAction","deleteOneScheduleAction","updateOneScheduleAction");
-
-        $controller_array=array("ScheduleController");
-        if(isset($_POST["act"])){
-            $act=$_POST['act'].'Action';
-        }else{
-            if(isset($_GET['act'])){
-                $act=$_GET['act'].'Action';
-            }else{
-                self::returnMessage(null,"你act参数没有设置",-231);
-            }
-
-        }
-        if(isset($_POST["type"])){
-            $type=$_POST['type'];
-        }else{
-//            $type=$_GET['type'];
-            if(isset($_GET['type'])){
-                $type=$_GET['type'];
-            }else{
-                self::returnMessage(null,"你type参数没有设置",-232);
-            }
-        }
-   //用户请求的动作,也是请求的dispatche的方法
-        if(!empty($act)){
+//得到的请求的方法
+        $function=$_POST['function'];
+        $token=$_POST['token'];
+//得到请求的数据表
+//$table=$_POST['mysqlTable'];
+        $parameter=$_POST;
+//得到接口对象
+        $apiObj=new APIModel($token);
+//调用方法,得到数据
+        $result=$apiObj->$function($parameter);
+//       返回数据
+        echo $result;
 
 
-            if(!in_array($act,$act_array)){
-
-                self::returnMessage(null,"你action参数对应的方法不存在",-102);
-            }
-        }/*else{
-            self::returnMessage(null,"没有传action参数",-101);
-       } */
-
-        if(!empty($type)){
-            $controller=$type.'Controller';
-            if(!in_array($controller,$controller_array)){
-
-                self::returnMessage(null,"你type参数对应的方法不存在",-103);
-            }
-        }/*else{
-            self::returnMessage(null,"没有传type参数",-104);
-        }*/
-
-//     var_dump($action);die;
-     //获得分发器类对象
-        $dipatcheObj=new $controller("10003","H1dFEDOrd3erkej-erfF30DRFDDASDW3","./token.txt","http://www.you.com/API/schedule2/model/start.php");
-//        var_dump($dipatcheObj);die;
-        //调用相应的方法
-        $dipatcheObj->$act();
 
 }
 

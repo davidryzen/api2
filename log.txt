@@ -266,3 +266,12 @@
 [2017-11-07 15:12:51] set names utf8
 [2017-11-07 15:12:51] DESC mj_xingcheng_data
 [2017-11-07 15:12:51] DELETE FROM `mj_xingcheng_data` WHERE `xcid`=60
+[2017-11-07 17:17:29] set names utf8
+[2017-11-07 17:17:29] DESC mj_xingcheng
+[2017-11-07 17:17:29] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-07 17:20:14] set names utf8
+[2017-11-07 17:20:14] DESC mj_xingcheng
+[2017-11-07 17:20:14] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-07 17:22:50] set names utf8
+[2017-11-07 17:22:51] DESC mj_xingcheng
+[2017-11-07 17:22:51] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
