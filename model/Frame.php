@@ -36,7 +36,7 @@ class Frame{
 //$table=$_POST['mysqlTable'];
         $parameter=$_POST;
 //得到接口对象
-       $apiObj=new APIModel(/*$token*/);
+       $apiObj=new APIModel();
 //调用方法,得到数据
         $result=$apiObj->$function($parameter);
 //       返回数据

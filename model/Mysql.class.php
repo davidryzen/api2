@@ -96,7 +96,7 @@ class Mysql{
 	/**
 	 * 获取所有的记录
 	 * @access public
-	 * @param $sql 执行的sql语句
+	 * @param $sql "执行的sql语句"
 	 * @return $list 有所有记录组成的二维数组
 	 */
 	public function getAll($sql){

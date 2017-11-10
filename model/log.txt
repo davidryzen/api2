@@ -109,3 +109,48 @@
 [2017-11-08 17:24:38] set names utf8
 [2017-11-08 17:24:38] DESC mj_xingcheng
 [2017-11-08 17:24:38] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-08 17:45:52] set names utf8
+[2017-11-08 17:45:52] DESC mj_xingcheng
+[2017-11-08 17:45:52] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-08 17:45:58] set names utf8
+[2017-11-08 17:45:58] DESC mj_xingcheng
+[2017-11-08 17:45:58] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 20,20
+[2017-11-08 17:46:05] set names utf8
+[2017-11-08 17:46:05] DESC mj_xingcheng
+[2017-11-08 17:46:05] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 560,20
+[2017-11-10 10:23:57] set names utf8
+[2017-11-10 10:23:57] DESC mj_xingcheng
+[2017-11-10 10:23:57] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-10 10:24:59] set names utf8
+[2017-11-10 10:24:59] DESC mj_xingcheng
+[2017-11-10 10:24:59] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 20,20
+[2017-11-10 10:58:07] set names utf8
+[2017-11-10 10:58:07] DESC mj_xingcheng
+[2017-11-10 10:58:07] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 20,20
+[2017-11-10 11:00:01] set names utf8
+[2017-11-10 11:00:01] DESC mj_xingcheng
+[2017-11-10 11:00:01] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=71 and zid=427
+[2017-11-10 11:03:49] set names utf8
+[2017-11-10 11:03:49] DESC mj_xingcheng
+[2017-11-10 11:03:49] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=71 and zid=427
+[2017-11-10 11:07:03] set names utf8
+[2017-11-10 11:07:03] DESC mj_xingcheng
+[2017-11-10 11:07:03] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=71 and zid=427
+[2017-11-10 11:13:31] set names utf8
+[2017-11-10 11:13:31] DESC mj_xingcheng
+[2017-11-10 11:13:31] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng where id=71 and zid=427
+[2017-11-10 15:54:35] set names utf8
+[2017-11-10 15:54:35] DESC mj_tool
+[2017-11-10 15:54:35] select tid,action,title,guize,px from tool where id=71
+[2017-11-10 15:55:39] set names utf8
+[2017-11-10 15:55:39] DESC mj_tool
+[2017-11-10 15:55:39] select tid,action,title,guize,px from tool where id=71
+[2017-11-10 15:56:59] set names utf8
+[2017-11-10 15:56:59] DESC mj_tool
+[2017-11-10 15:56:59] select tid,action,title,guize,px from tool where id=71
+[2017-11-10 15:59:20] set names utf8
+[2017-11-10 15:59:20] DESC mj_tool
+[2017-11-10 15:59:20] select tid,action,title,guize,px from mj_tool where id=71
+[2017-11-10 15:59:53] set names utf8
+[2017-11-10 15:59:53] DESC mj_tool
+[2017-11-10 15:59:53] select tid,action,title,guize,px from mj_tool where id=71

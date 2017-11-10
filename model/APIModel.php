@@ -7,13 +7,32 @@
  * 中间程序请求的接口
  */
   class APIModel{
-      public function __construct(/*$token*/)
-      {
-        //验证token
-         /* $url="https://www.mijiweb.com/qcloud/OAuth/";
-          $data="action=jiaoyan&token=$token&xingwei=xingcheng";
-         $this-> curlPost($url,$data);*/
+             //验证token
+      public function confirmToken($parameter){
+          $token=$parameter['token'];
+          $url=$parameter['url'];
+          $xingwei=$parameter['xingwei'];
+          $data="action=jiaoyan&token=$token&xingwei=$xingwei";
+
+          $result=$this->curlPost($url,$data);
+         echo $result;
+
       }
+
+      //获取某个商户的所有的小工具
+      public function showAllTools($parameter){
+          //得到model对象
+          $modelObj=new Model($parameter['table']);
+//          $where="id=".$parameter['id'];
+          $tableData= $modelObj->table;
+          //凭借sql语句
+          $sql="select tid,action,title,guize,px from $tableData where id={$parameter['id']}";
+          //调用Mysql类的方法，查询所有的数据
+          $result=$modelObj->db->getAll($sql);
+          //返回数据
+          return json_encode($result);
+      }
+
 
       //更新某条详细行程
      public function updateOneSchedule($parameter){

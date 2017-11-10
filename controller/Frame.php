@@ -29,7 +29,7 @@ class Frame{
     }
     private static  function index(){
 //        var_dump($_POST);var_dump($_GET);die;
-        $act_array=array("getAllAction","getOneAction","getOneScheduleAction","addOneAction","deleteOneAction","updateOneAction","addOneScheduleAction","deleteOneScheduleAction","updateOneScheduleAction");
+        $act_array=array("getAllAction","getOneAction","getOneScheduleAction","addOneAction","deleteOneAction","updateOneAction","addOneScheduleAction","deleteOneScheduleAction","updateOneScheduleAction","collectFormDataAction","showAllToolsAction","getMerchantInfoAction");
 
         $controller_array=array("ScheduleController","LittleToolsController");
         if(isset($_POST["act"])){
@@ -42,10 +42,9 @@ class Frame{
             }
 
         }
-        if(isset($_POST["type"])){
+        if(isset($_POST["type"])&&!empty($_POST["type"])){//如果设置了type且不为空
             $type=$_POST['type'];
         }else{
-//            $type=$_GET['type'];
             if(isset($_GET['type'])){
                 $type=$_GET['type'];
             }else{
@@ -65,7 +64,13 @@ class Frame{
        } */
 
         if(!empty($type)){
+//           var_dump($type);var_dump($act);die;
             $controller=$type.'Controller';
+            if($type=="Schedule"){
+                $xingwei="xingcheng";
+            }elseif(($type=="LittleTools"&&$act=="showAllToolsAction")||($type=="LittleTools"&&$act=="getMerchantInfoAction")){
+                $xingwei="tool";
+            }
             if(!in_array($controller,$controller_array)){
 
                 self::returnMessage(null,"你type参数对应的方法不存在",-103);
@@ -74,9 +79,9 @@ class Frame{
             self::returnMessage(null,"没有传type参数",-104);
         }*/
 
-//     var_dump($action);die;
+//    var_dump($controller);die;
      //获得分发器类对象
-        $dipatcheObj=new $controller("10003","H1dFEDOrd3erkej-erfF30DRFDDASDW3","./token.txt","http://www.you.com/API/schedule2/model/start.php");
+        $dipatcheObj=new $controller("10003","H1dFEDOrd3erkej-erfF30DRFDDASDW3","./token.txt","http://www.you.com/API/schedule2/model/start.php",$xingwei);
 //        var_dump($dipatcheObj);die;
         //调用相应的方法
         $dipatcheObj->$act();
