@@ -154,3 +154,226 @@
 [2017-11-10 15:59:53] set names utf8
 [2017-11-10 15:59:53] DESC mj_tool
 [2017-11-10 15:59:53] select tid,action,title,guize,px from mj_tool where id=71
+[2017-11-13 10:14:35] set names utf8
+[2017-11-13 10:14:35] DESC mj_xingcheng_data
+[2017-11-13 10:14:35] select title,url,vip,shijian,miaoshu,context from mj_xingcheng_data where xid=49
+[2017-11-13 13:09:33] set names utf8
+[2017-11-13 13:09:33] DESC mj_tool_log
+[2017-11-13 13:09:33] INSERT INTO `mj_tool_log` (`id`,`title`,`tid`,`miaoshu`,`startime`,`endtime`,`canshu`) VALUES ('71','运动会报名','1','友谊第一，比赛第二','','2014-4-5','{"info":[{"name":"姓名","zt":"1","zhi":"1"},{"name":"年龄","zt":"1","zhi":"2"},{"name":"想参加的项目","zt":"1","zhi":"3"}]}')
+[2017-11-13 13:10:22] set names utf8
+[2017-11-13 13:10:23] DESC mj_tool_log
+[2017-11-13 13:10:23] INSERT INTO `mj_tool_log` (`id`,`title`,`tid`,`miaoshu`,`startime`,`endtime`,`canshu`) VALUES ('71','运动会报名','1','友谊第一，比赛第二','','2014-4-5','{"info":[{"name":"姓名","zt":"1","zhi":"1"},{"name":"年龄","zt":"1","zhi":"2"},{"name":"想参加的项目","zt":"1","zhi":"3"}]}')
+[2017-11-13 13:27:39] set names utf8
+[2017-11-13 13:27:39] DESC mj_tool_log
+[2017-11-13 13:27:39] INSERT INTO `mj_tool_log` (`id`,`title`,`tid`,`miaoshu`,`startime`,`endtime`,`canshu`) VALUES ('71','运动会报名','1','友谊第一，比赛第二','1393689600','2014-4-5','{"info":[{"name":"姓名","zt":"1","zhi":"1"},{"name":"年龄","zt":"1","zhi":"2"},{"name":"想参加的项目","zt":"1","zhi":"3"}]}')
+[2017-11-13 13:28:22] set names utf8
+[2017-11-13 13:28:22] DESC mj_tool_log
+[2017-11-13 13:28:22] INSERT INTO `mj_tool_log` (`id`,`title`,`tid`,`miaoshu`,`startime`,`endtime`,`canshu`) VALUES ('71','运动会报名','1','友谊第一，比赛第二','1393689600','1396627200','{"info":[{"name":"姓名","zt":"1","zhi":"1"},{"name":"年龄","zt":"1","zhi":"2"},{"name":"想参加的项目","zt":"1","zhi":"3"}]}')
+[2017-11-13 13:28:43] set names utf8
+[2017-11-13 13:28:43] DESC mj_tool_log
+[2017-11-13 13:28:43] INSERT INTO `mj_tool_log` (`id`,`title`,`tid`,`miaoshu`,`startime`,`endtime`,`canshu`) VALUES ('71','运动会报名','1','友谊第一，比赛第二','1393689600','1396627200','{"info":[{"name":"姓名","zt":"1","zhi":"1"},{"name":"年龄","zt":"1","zhi":"2"},{"name":"想参加的项目","zt":"1","zhi":"3"}]}')
+[2017-11-13 13:33:35] set names utf8
+[2017-11-13 13:33:35] DESC mj_tool_log
+[2017-11-13 13:33:35] INSERT INTO `mj_tool_log` (`id`,`title`,`tid`,`miaoshu`,`startime`,`endtime`,`canshu`) VALUES ('71','运动会报名','1','友谊第一，比赛第二','1511020800','','{"info":[{"name":"姓名","zt":"1","zhi":"1"},{"name":"年龄","zt":"1","zhi":"1"},{"name":"想参加的项目","zt":"1","zhi":"3"}]}')
+[2017-11-13 13:34:54] set names utf8
+[2017-11-13 13:34:54] DESC mj_tool_log
+[2017-11-13 13:34:54] INSERT INTO `mj_tool_log` (`id`,`title`,`tid`,`miaoshu`,`startime`,`endtime`,`canshu`) VALUES ('71','运动会报名','1','友谊第一，比赛第二','1511020800','','{"info":[{"name":"姓名","zt":"1","zhi":"1"},{"name":"年龄","zt":"1","zhi":"1"},{"name":"想参加的项目","zt":"1","zhi":"3"}]}')
+[2017-11-13 13:38:41] set names utf8
+[2017-11-13 13:38:41] DESC mj_tool_log
+[2017-11-13 13:38:41] INSERT INTO `mj_tool_log` (`id`,`title`,`tid`,`miaoshu`,`startime`,`endtime`,`canshu`) VALUES ('71','个地方三个地方','1','加油','1510675200','1512057600','{"info":[{"name":"姓名","zt":"1","zhi":"1"},{"name":"","zt":"1","zhi":"1"},{"name":"","zt":"1","zhi":"1"}]}')
+[2017-11-13 13:39:01] set names utf8
+[2017-11-13 13:39:01] DESC mj_tool_log
+[2017-11-13 13:39:01] INSERT INTO `mj_tool_log` (`id`,`title`,`tid`,`miaoshu`,`startime`,`endtime`,`canshu`) VALUES ('71','个地方三个地方','1','加油','1510675200','1512057600','{"info":[{"name":"姓名","zt":"1","zhi":"1"},{"name":"","zt":"1","zhi":"1"},{"name":"","zt":"1","zhi":"1"}]}')
+[2017-11-13 13:40:56] set names utf8
+[2017-11-13 13:40:57] DESC mj_tool_log
+[2017-11-13 13:40:57] INSERT INTO `mj_tool_log` (`id`,`title`,`tid`,`miaoshu`,`startime`,`endtime`,`canshu`,`zt`) VALUES ('71','个地方三个地方','1','加油','1510675200','1512057600','{"info":[{"name":"姓名","zt":"1","zhi":"1"},{"name":"","zt":"1","zhi":"1"},{"name":"","zt":"1","zhi":"1"}]}','1')
+[2017-11-13 14:59:37] set names utf8
+[2017-11-13 14:59:37] DESC mj_tool_log
+[2017-11-13 14:59:37] select tid,id,title,starttime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:00:01] set names utf8
+[2017-11-13 15:00:02] DESC mj_tool_log
+[2017-11-13 15:00:02] select tid,id,title,starttime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:00:53] set names utf8
+[2017-11-13 15:00:53] DESC mj_tool_log
+[2017-11-13 15:00:53] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:04:32] set names utf8
+[2017-11-13 15:04:32] DESC mj_tool_log
+[2017-11-13 15:04:32] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:05:31] set names utf8
+[2017-11-13 15:05:31] DESC mj_tool_log
+[2017-11-13 15:05:31] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:06:26] set names utf8
+[2017-11-13 15:06:26] DESC mj_tool_log
+[2017-11-13 15:06:26] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:08:11] set names utf8
+[2017-11-13 15:08:11] DESC mj_tool_log
+[2017-11-13 15:08:11] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:08:14] set names utf8
+[2017-11-13 15:08:14] DESC mj_tool_log
+[2017-11-13 15:08:14] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:08:52] set names utf8
+[2017-11-13 15:08:52] DESC mj_tool_log
+[2017-11-13 15:08:52] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:09:14] set names utf8
+[2017-11-13 15:09:14] DESC mj_tool_log
+[2017-11-13 15:09:14] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:09:52] set names utf8
+[2017-11-13 15:09:52] DESC mj_tool_log
+[2017-11-13 15:09:52] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:10:21] set names utf8
+[2017-11-13 15:10:21] DESC mj_tool_log
+[2017-11-13 15:10:21] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:15:13] set names utf8
+[2017-11-13 15:15:13] DESC mj_tool_log
+[2017-11-13 15:15:13] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:19:08] set names utf8
+[2017-11-13 15:19:08] DESC mj_tool_log
+[2017-11-13 15:19:08] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:19:50] set names utf8
+[2017-11-13 15:19:50] DESC mj_tool_log
+[2017-11-13 15:20:26] set names utf8
+[2017-11-13 15:20:26] DESC mj_tool_log
+[2017-11-13 15:20:26] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:20:53] set names utf8
+[2017-11-13 15:20:53] DESC mj_tool_log
+[2017-11-13 15:20:53] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:21:09] set names utf8
+[2017-11-13 15:21:09] DESC mj_tool_log
+[2017-11-13 15:21:09] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:21:12] set names utf8
+[2017-11-13 15:21:12] DESC mj_tool_log
+[2017-11-13 15:21:12] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:21:32] set names utf8
+[2017-11-13 15:21:32] DESC mj_tool_log
+[2017-11-13 15:21:32] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:22:36] set names utf8
+[2017-11-13 15:22:36] DESC mj_tool_log
+[2017-11-13 15:22:36] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:23:20] set names utf8
+[2017-11-13 15:23:20] DESC mj_tool_log
+[2017-11-13 15:23:20] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:23:35] set names utf8
+[2017-11-13 15:23:35] DESC mj_tool_log
+[2017-11-13 15:23:35] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:23:38] set names utf8
+[2017-11-13 15:23:38] DESC mj_tool_log
+[2017-11-13 15:23:38] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:24:23] set names utf8
+[2017-11-13 15:24:23] DESC mj_tool_log
+[2017-11-13 15:24:23] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:32:44] set names utf8
+[2017-11-13 15:32:44] DESC mj_tool_log
+[2017-11-13 15:32:44] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 15:55:59] set names utf8
+[2017-11-13 15:55:59] DESC mj_xingcheng_data
+[2017-11-13 15:55:59] select * from mj_xingcheng_data where xid=49
+[2017-11-13 16:29:30] set names utf8
+[2017-11-13 16:29:30] DESC mj_tool_log
+[2017-11-13 16:29:30] select * from mj_tool_log where gid=71
+[2017-11-13 16:30:03] set names utf8
+[2017-11-13 16:30:03] DESC mj_tool_log
+[2017-11-13 16:30:03] select * from mj_tool_log where gid=71
+[2017-11-13 16:30:13] set names utf8
+[2017-11-13 16:30:13] DESC mj_tool_log
+[2017-11-13 16:30:13] select * from mj_tool_log where gid=71
+[2017-11-13 16:31:39] set names utf8
+[2017-11-13 16:31:39] DESC mj_tool_log
+[2017-11-13 16:31:39] select * from mj_tool_log where id=71
+[2017-11-13 16:32:40] set names utf8
+[2017-11-13 16:32:40] DESC mj_tool_log
+[2017-11-13 16:32:40] select * from mj_tool_log where id=71
+[2017-11-13 16:36:59] set names utf8
+[2017-11-13 16:36:59] DESC mj_tool_log
+[2017-11-13 16:36:59] select * from mj_tool_log where id=71
+[2017-11-13 16:37:43] set names utf8
+[2017-11-13 16:37:43] DESC mj_tool_log
+[2017-11-13 16:37:43] select * from mj_tool_log where id=71
+[2017-11-13 16:38:20] set names utf8
+[2017-11-13 16:38:20] DESC mj_tool_log
+[2017-11-13 16:38:20] select * from mj_tool_log where id=71
+[2017-11-13 16:59:28] set names utf8
+[2017-11-13 16:59:28] DESC mj_tool_log
+[2017-11-13 16:59:28] select * from mj_tool_log where id=71 limit 0,20
+[2017-11-13 17:01:09] set names utf8
+[2017-11-13 17:01:09] DESC mj_tool_log
+[2017-11-13 17:01:09] select * from mj_tool_log where id=71 limit 20,20
+[2017-11-13 17:02:07] set names utf8
+[2017-11-13 17:02:08] DESC mj_tool_log
+[2017-11-13 17:02:08] select * from mj_tool_log where id=71 limit 20,20
+[2017-11-13 17:02:56] set names utf8
+[2017-11-13 17:02:56] DESC mj_tool_log
+[2017-11-13 17:02:56] select * from mj_tool_log where id=71 limit 20,20
+[2017-11-13 17:03:06] set names utf8
+[2017-11-13 17:03:06] DESC mj_tool_log
+[2017-11-13 17:03:06] select * from mj_tool_log where id=71 limit 0,20
+[2017-11-13 17:09:07] set names utf8
+[2017-11-13 17:09:07] DESC mj_tool_log
+[2017-11-13 17:09:07] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 17:10:07] set names utf8
+[2017-11-13 17:10:07] DESC mj_tool_log
+[2017-11-13 17:10:07] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 17:11:44] set names utf8
+[2017-11-13 17:11:44] DESC mj_tool_log
+[2017-11-13 17:11:44] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 17:12:28] set names utf8
+[2017-11-13 17:12:28] DESC mj_tool_log
+[2017-11-13 17:12:29] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 17:12:59] set names utf8
+[2017-11-13 17:12:59] DESC mj_tool_log
+[2017-11-13 17:12:59] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 17:13:21] set names utf8
+[2017-11-13 17:13:21] DESC mj_tool_log
+[2017-11-13 17:13:21] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 17:13:42] set names utf8
+[2017-11-13 17:13:42] DESC mj_tool_log
+[2017-11-13 17:13:42] select tid,id,title,startime,endtime,miaoshu,canshu from mj_tool_log where gid=4
+[2017-11-13 17:55:45] set names utf8
+[2017-11-13 17:55:45] DESC mj_xingcheng
+[2017-11-13 17:55:45] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 20,20
+[2017-11-14 11:03:18] set names utf8
+[2017-11-14 11:03:18] DESC mj_xingcheng_data
+[2017-11-14 11:03:18] select * from mj_xingcheng_data where xid=49
+[2017-11-14 11:05:45] set names utf8
+[2017-11-14 11:05:45] DESC mj_tool_log
+[2017-11-14 11:05:45] UPDATE `mj_tool_log` SET `title`='运动会',`miaoshu`='',`startime`='1510675200',`endtime`='1512057600',`canshu`='{"info":[{"name":"姓名","zt":"1","zhi":"1"},{"name":"年龄","zt":"1","zhi":"1"},{"name":"项目","zt":"1","zhi":"1"}]}',`zt`='1' WHERE gid=7
+[2017-11-14 11:14:12] set names utf8
+[2017-11-14 11:14:12] DESC mj_tool_log
+[2017-11-14 11:14:12] UPDATE `mj_tool_log` SET `title`='运动会66',`miaoshu`='加油',`startime`='1510675200',`endtime`='1512057600',`canshu`='{"info":[{"name":"姓名","zt":"1","zhi":"1"},{"name":"年龄","zt":"1","zhi":"1"},{"name":"项目","zt":"1","zhi":"1"}]}',`zt`='1' WHERE gid=7
+[2017-11-14 11:32:30] set names utf8
+[2017-11-14 11:32:30] DESC mj_tool_log
+[2017-11-14 11:32:30] select * from mj_tool_log where id=71 and zt=0 limit 0,20
+[2017-11-14 11:33:00] set names utf8
+[2017-11-14 11:33:00] DESC mj_tool_log
+[2017-11-14 11:33:00] select * from mj_tool_log where id=71 and zt=1 limit 0,20
+[2017-11-14 13:54:05] set names utf8
+[2017-11-14 13:54:05] DESC mj_tool_biaodan
+[2017-11-14 13:55:20] set names utf8
+[2017-11-14 13:55:20] DESC mj_tool_biaodan
+[2017-11-14 13:55:20] select * from mj_tool_biaodan where gid=1 limit 0,20
+[2017-11-14 14:00:27] set names utf8
+[2017-11-14 14:00:28] DESC mj_tool_biaodan
+[2017-11-14 14:00:28] select * from mj_tool_biaodan where gid=1 limit 0,20
+[2017-11-14 14:01:03] set names utf8
+[2017-11-14 14:01:03] DESC mj_tool_biaodan
+[2017-11-14 14:01:03] select * from mj_tool_biaodan where gid=1 limit 0,20
+[2017-11-14 14:01:20] set names utf8
+[2017-11-14 14:01:20] DESC mj_tool_biaodan
+[2017-11-14 14:01:20] select * from mj_tool_biaodan where gid=2 limit 0,20
+[2017-11-14 14:03:17] set names utf8
+[2017-11-14 14:03:17] DESC mj_tool_biaodan
+[2017-11-14 14:03:17] select * from mj_tool_biaodan where gid=2 limit 20,20
+[2017-11-15 11:42:59] set names utf8
+[2017-11-15 11:42:59] DESC mj_xingcheng
+[2017-11-15 11:42:59] select xid,title,keyboard,titlepic,pic,miaoshu from mj_xingcheng limit 0,20
+[2017-11-15 11:48:02] set names utf8
+[2017-11-15 11:48:02] DESC mj_renwu
+[2017-11-15 11:48:02] select * from mj_renwu where zid=98 limit 0,20
+[2017-11-15 11:49:03] set names utf8
+[2017-11-15 11:49:03] DESC mj_renwu
+[2017-11-15 11:49:03] select * from mj_renwu where zid=420 limit 0,20
+[2017-11-15 13:48:08] set names utf8
+[2017-11-15 13:48:09] DESC mj_renwu
+[2017-11-15 13:48:09] select * from mj_renwu where zid=420  limit 0,20
+[2017-11-15 13:50:01] set names utf8
+[2017-11-15 13:50:01] DESC mj_renwu
+[2017-11-15 13:50:01] select * from mj_renwu where zid=98 and zt=1 limit 0,20

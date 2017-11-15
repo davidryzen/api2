@@ -10,8 +10,9 @@ class TopController{
         //生成token
         $token= $this->getToken($appid,$appkey,$filepath);
         $data="function=confirmToken&token=$token&url=https://www.mijiweb.com/qcloud/OAuth/&xingwei=$xingwei";
-//            var_dump($data);die;
+
         $result=$this->curlPost($confirmUrl,$data);
+//        var_dump($data);die($result);die;
         $result=json_decode($result)->msg;
 
         if($result!="success"){

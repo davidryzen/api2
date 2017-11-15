@@ -18,14 +18,130 @@
          echo $result;
 
       }
+      //评论
+      //审核状态的改变
+      public function changeState($parameter){
+          //得到model对象
+          $modelObj=new Model($parameter['table']);
+          $table=$modelObj->table;
+          //先得到这个评价
+          $sql="select zt from $table WHERE plid=".$parameter['plid'];
+          $result=$modelObj->db->getAll($sql);
+          if($result[0]['zt']=1){
+              $list=array("zt"=>0);
+              $where="plid=".$parameter['plid'];
+              $result= $modelObj->update($list,$where);
+          }else{
+              $list=array("zt"=>1);
+              $where="plid=".$parameter['plid'];
+              $result= $modelObj->update($list,$where);
+          }
 
+          return json_encode($result);
+      }
+      //回复评论
+      public function replyComment($parameter){
+//          table=pinlun&function=replyComment&id=$id&zid=$zid&plid=$plid&hftext=$hftext
+          //得到model对象
+          $modelObj=new Model($parameter['table']);
+          $list=array('id'=>$parameter['id'],"zid"=>$parameter['zid'],'hftext'=>$parameter['hftext'],"hftime"=>time());
+          $where="plid=".$parameter['plid'];
+          $result= $modelObj->update($list,$where);
+          return json_encode($result);
+
+      }
+      public function replyByfs($parameter){//通过部门zid和fs获取评论
+          //得到model对象
+          $modelObj=new Model($parameter['table']);
+//          $where="id=".$parameter['id'];
+          $tableData= $modelObj->table;
+            if($parameter['zid']==0){//查找全部的评论
+                $where="";
+            }else{
+                $where="where zid={$parameter['zid']}";
+            }
+
+
+          //起始位置
+          $start=($parameter['page']-1)*20;
+          //每一页显示的条数
+          $pageNum=20;
+
+          //拼接sql语句
+          $sql="select * from $tableData where zid={$parameter['zid']} $where limit $start,$pageNum";
+          //调用Mysql类的方法，查询所有的数据
+          $result=$modelObj->db->getAll($sql);
+          //循环判断有没有回复
+          $replied=array();//存放回复的数据
+          $repling=array();//存放未回复的数据
+          $length=count($result);
+          for($i=0;$i<$length;++$i){
+              if($result[$i]['hftime']==null){
+                  $repling[$i]=$result[$i];
+              }else{
+                  $replied[$i]=$result[$i];
+              }
+          }
+          if($parameter['fs']==0){
+              //返回数据
+              return json_encode($result);
+          }elseif($parameter['fs']==1){
+              //返回数据
+              return json_encode($replied);
+          }else{
+              //返回数据
+              return json_encode($repling);
+          }
+
+      }
+
+      //任务
+       //显示部门的任务
+      public function showAllTasksByzt($parameter){
+          //得到model对象
+          $modelObj=new Model($parameter['table']);
+//          $where="id=".$parameter['id'];
+          $tableData= $modelObj->table;
+           if($parameter['zt']!=0){
+               $where="and zt=".$parameter['zt'];
+           }else{
+               $where="";
+           }
+          //起始位置
+          $start=($parameter['page']-1)*20;
+          //每一页显示的条数
+          $pageNum=20;
+
+          //拼接sql语句
+          $sql="select * from $tableData where zid={$parameter['zid']} $where limit $start,$pageNum";
+          //调用Mysql类的方法，查询所有的数据
+          $result=$modelObj->db->getAll($sql);
+          //返回数据
+          return json_encode($result);
+      }
+
+      //给某个部门添加任务
+      public function addTask($parameter){
+//          $data="table=renwu&function=addTask&id=$id&zid=$zid&userid=$userid&leixing=$leixing&kaimen=$kaimen&fangjian=$fangjian&shijian=$shijian&context=$context";
+          //得到model对象
+          $modelObj=new Model($parameter['table']);
+          $list=array('id'=>$parameter['id'],'userid'=>$parameter['userid'],"leixing"=>$parameter['leixing'],"kaimen"=>$parameter['kaimen'],'fangjian'=>$parameter['fangjian'],'shijian'=>$parameter['shijian'],"context"=>$parameter['context'],"zt"=>$parameter['zt'],"startime"=>time(),"zt"=>1);
+          $result= $modelObj-> insert($list);
+          return json_encode($result);
+      }
+
+
+
+
+       //小工具
       //获取某个商户的所有的小工具
       public function showAllTools($parameter){
           //得到model对象
           $modelObj=new Model($parameter['table']);
 //          $where="id=".$parameter['id'];
           $tableData= $modelObj->table;
-          //凭借sql语句
+          //拼借sql语句
+//          $sql="select tid,action,title,guize,px from $tableData where id={$parameter['id']}";
           $sql="select tid,action,title,guize,px from $tableData where id={$parameter['id']}";
           //调用Mysql类的方法，查询所有的数据
           $result=$modelObj->db->getAll($sql);
@@ -33,7 +149,117 @@
           return json_encode($result);
       }
 
+      //收集某一个商户id，提交的表单数据结构
+      public function addFormFrame($parameter){
+          //得到model对象
+          $modelObj=new Model($parameter['table']);
+          $list=array('id'=>$parameter['id'],'title'=>$parameter['title'],"tid"=>$parameter['tid'],"miaoshu"=>$parameter['miaoshu'],'startime'=>$parameter['starttime'],'endtime'=>$parameter['endtime'],"canshu"=>$parameter['canshu'],"zt"=>$parameter['zt']);
+          $result= $modelObj-> insert($list);
+          return json_encode($result);
+     }
+     //根据gid显示一个formFrame
+      public function showFormFrame($parameter){
+          //得到model对象
+          $modelObj=new Model($parameter['table']);
+          $tableData= $modelObj->table;
+          //拼接sql语句
+          $sql="select tid,id,title,startime,endtime,miaoshu,canshu from $tableData where gid={$parameter['gid']}";
+          //调用Mysql类的方法，查询所有的数据
+          $result=$modelObj->db->getAll($sql);
+//          var_dump($result);die;
+          //返回数据
+          echo json_encode($result);
+      }
 
+      //显示某个商户的使用中小工具的记录
+       public  function showUseingToolsById($parameter){
+           $modelObj=new Model($parameter['table']);
+           $tableData= $modelObj->table;
+           //起始位置
+           $start=($parameter['page']-1)*20;
+           //每一页显示的条数
+           $pageNum=20;
+
+           //拼接sql语句
+           $sql="select * from $tableData where id={$parameter['id']} and zt=1 limit $start,$pageNum";
+           //调用Mysql类的方法，查询所有的数据
+           $result=$modelObj->db->getAll($sql);
+           //返回数据
+           echo json_encode($result);       }
+           //显示某个商户的使用过期小工具的记录
+       public  function showExpiredToolsById($parameter){
+           $modelObj=new Model($parameter['table']);
+           $tableData= $modelObj->table;
+           //起始位置
+           $start=($parameter['page']-1)*20;
+           //每一页显示的条数
+           $pageNum=20;
+
+           //拼接sql语句
+           $sql="select * from $tableData where id={$parameter['id']} and zt=0 limit $start,$pageNum";
+           //调用Mysql类的方法，查询所有的数据
+           $result=$modelObj->db->getAll($sql);
+           //返回数据
+           echo json_encode($result);       }
+      //显示某个商户的使用全部小工具的记录
+      public function showAllToolsById($parameter){
+          $modelObj=new Model($parameter['table']);
+          $tableData= $modelObj->table;
+          //起始位置
+          $start=($parameter['page']-1)*20;
+          //每一页显示的条数
+          $pageNum=20;
+
+          //拼接sql语句
+          $sql="select * from $tableData where id={$parameter['id']} limit $start,$pageNum";
+          //调用Mysql类的方法，查询所有的数据
+          $result=$modelObj->db->getAll($sql);
+          //返回数据
+          echo json_encode($result);
+      }
+
+      // 显示用户用小工具提交的数据
+      public function showFormDataFromUser($parameter){
+          $modelObj=new Model($parameter['table']);
+          $tableData= $modelObj->table;
+          //起始位置
+          $start=($parameter['page']-1)*20;
+          //每一页显示的条数
+          $pageNum=20;
+          //拼接sql语句
+          $sql="select * from $tableData where gid={$parameter['gid']} limit $start,$pageNum";
+
+          //调用Mysql类的方法，查询所有的数据
+          $result=$modelObj->db->getAll($sql);
+//          var_dump($result);die;
+          //返回数据
+          echo json_encode($result);
+
+      }
+     //根据gid更新某一个商户id提交的表单数据结构updateFormFrame
+      public function updateFormFrame($parameter){
+          //得到model对象
+          $modelObj=new Model($parameter['table']);
+          $list=array('title'=>$parameter['title'],"miaoshu"=>$parameter['miaoshu'],'startime'=>$parameter['starttime'],'endtime'=>$parameter['endtime'],"canshu"=>$parameter['canshu'],"zt"=>$parameter['zt']);
+          $where="gid=".$parameter['gid'];
+          $result= $modelObj->update($list,$where);
+          return json_encode($result);
+     }
+       /*//显示要跟新的详细行程
+      public function showOneSchedul($parameter){
+
+              //得到model对象
+              $modelObj=new Model($parameter['table']);
+              $tableData= $modelObj->table;
+              //拼接sql语句
+              $sql="select * from $tableData where xcid={$parameter['xcid']}";
+              //调用Mysql类的方法，查询所有的数据
+              $result=$modelObj->db->getAll($sql);
+//          var_dump($result);die;
+              //返回数据
+              echo json_encode($result);
+
+      }*/
       //更新某条详细行程
      public function updateOneSchedule($parameter){
 
@@ -67,6 +293,21 @@
           return json_encode($result);
 
 
+      }
+
+      //显示要修改的简介行程的数据
+      //根据gid显示一个formFrame
+      public function showOne($parameter){
+          //得到model对象
+          $modelObj=new Model($parameter['table']);
+          $tableData= $modelObj->table;
+          //拼接sql语句
+          $sql="select * from $tableData where xid={$parameter['xid']}";
+          //调用Mysql类的方法，查询所有的数据
+          $result=$modelObj->db->getAll($sql);
+//          var_dump($result);die;
+          //返回数据
+          echo json_encode($result);
       }
       //修改行程
      public function updateOne($parameter){
@@ -102,7 +343,7 @@
           $modelObj=new Model($parameter['table']);
           $tableData= $modelObj->table;
           //编写sql语句
-          $sql="select title,url,vip,shijian,miaoshu,context from $tableData where xid={$parameter['xid']}";
+          $sql="select * from $tableData where xid={$parameter['xid']}";
           $result= $modelObj->db->getAll($sql);
           return json_encode($result);
 
@@ -114,7 +355,7 @@
           $tableData= $modelObj->table;
           //               exit($tableData);
           //编写sql语句
-          $sql="select xid,title,keyboard,titlepic,pic,miaoshu from $tableData where id={$parameter['id']} and zid={$parameter['zid']}";
+          $sql="select * from $tableData where id={$parameter['id']} and zid={$parameter['zid']}";
           //               exit($sql);
           //调用得到所有数据的方法
           $result= $modelObj->db->getAll($sql);

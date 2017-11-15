@@ -21,17 +21,22 @@ class Frame{
 
     //初始化数据方法
     private static function init(){
+        //定义路径常量
+        define("DS", DIRECTORY_SEPARATOR);
+        define("ROOT",getcwd().DS);
+
         //载入配置文件
-        $GLOBALS['config'] = include "/dl/API/schedule2/model/config.php";
+        $GLOBALS['config'] = include ROOT."model/config.php";
+
         //引入数据库类
-        include_once "/dl/API/schedule2/model/Model.class.php";
-        include_once "/dl/API/schedule2/model/Mysql.class.php";
+        include_once ROOT."model/Model.class.php";
+        include_once ROOT."model/Mysql.class.php";
     }
     private static  function index(){
 //        var_dump($_POST);var_dump($_GET);die;
-        $act_array=array("getAllAction","getOneAction","getOneScheduleAction","addOneAction","deleteOneAction","updateOneAction","addOneScheduleAction","deleteOneScheduleAction","updateOneScheduleAction","collectFormDataAction","showAllToolsAction","getMerchantInfoAction");
+        $act_array=array("getAllAction","getOneAction","getOneScheduleAction","addOneAction","deleteOneAction","updateOneAction","addOneScheduleAction","deleteOneScheduleAction","updateOneScheduleAction","collectFormDataAction","showAllToolsAction","getMerchantInfoAction","addFormFrameAction","updateFormFrameAction","showFormFrameAction","showAllToolsByIdAction","showUseingToolsByIdAction","showExpiredToolsByIdAction","showFormDataFromUserAction","showAllTasksByztAction","addTaskAction","replyByfsAction","replyCommentAction","changeStateAction");
 
-        $controller_array=array("ScheduleController","LittleToolsController");
+        $controller_array=array("ScheduleController","LittleToolsController","TaskController","AppraisalController");
         if(isset($_POST["act"])){
             $act=$_POST['act'].'Action';
         }else{
@@ -57,19 +62,23 @@ class Frame{
 
             if(!in_array($act,$act_array)){
 
-                self::returnMessage(null,"你action参数对应的方法不存在",-102);
+                self::returnMessage(null,"你act参数对应的方法不存在",-102);
             }
         }/*else{
             self::returnMessage(null,"没有传action参数",-101);
        } */
 
         if(!empty($type)){
-//           var_dump($type);var_dump($act);die;
+//         var_dump($type);var_dump($act);die;
             $controller=$type.'Controller';
             if($type=="Schedule"){
                 $xingwei="xingcheng";
-            }elseif(($type=="LittleTools"&&$act=="showAllToolsAction")||($type=="LittleTools"&&$act=="getMerchantInfoAction")){
+            }elseif(($type=="LittleTools"&&$act=="showAllToolsAction")||($type=="LittleTools"&&$act=="getMerchantInfoAction")||($type=="LittleTools"&&$act=="addFormFrameAction")||($type=="LittleTools"&&$act=="updateFormFrameAction")||($type=="LittleTools"&&$act=="showFormFrameAction")||($type=="LittleTools"&&$act=="showAllToolsByIdAction")||($type=="LittleTools"&&$act=="showUseingToolsByIdAction")||($type=="LittleTools"&&$act=="showExpiredToolsByIdAction")||($type=="LittleTools"&&$act=="showFormDataFromUserAction")){
                 $xingwei="tool";
+            }elseif(($type=="Task"&&$act=="showAllTasksByztAction")||($type=="Task"&&$act=="addTaskAction")){
+                $xingwei="renwu";
+            }elseif(($type=="Appraisal"&&$act=="replyByfsAction")||($type=="Appraisal"&&$act=="replyCommentAction")||($type=="Appraisal"&&$act=="changeStateAction")){
+                $xingwei="pinlun";
             }
             if(!in_array($controller,$controller_array)){
 
@@ -102,7 +111,7 @@ class Frame{
         include $className.".php";
     }else if(substr($className,-5)=="Model"){
         //载入模型类
-        include "/dl/API/schedule2/model/".$className.".php";
+        include ROOT."model/".$className.".php";
     }else{
         //以后有需要添加
     }

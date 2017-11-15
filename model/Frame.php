@@ -22,18 +22,19 @@ class Frame{
 
     //初始化数据方法
     private static function init(){
+//        define(CURRENTROOT,getcwd());
         //载入配置文件
-        $GLOBALS['config'] = include "/dl/API/schedule2/model/config.php";
+        $GLOBALS['config'] = include ROOT."config.php";
         //引入数据库类
-        include_once "/dl/API/schedule2/model/Model.class.php";
-        include_once "/dl/API/schedule2/model/Mysql.class.php";
+        include_once ROOT."Model.class.php";
+        include_once ROOT."Mysql.class.php";
     }
     private static  function index(){
 //得到的请求的方法
         $function=$_POST['function'];
-//        $token=$_POST['token'];
+//       $token=$_POST['token'];
 //得到请求的数据表
-//$table=$_POST['mysqlTable'];
+
         $parameter=$_POST;
 //得到接口对象
        $apiObj=new APIModel();
@@ -60,7 +61,7 @@ class Frame{
         include $className.".php";
     }else if(substr($className,-5)=="Model"){
         //载入模型类
-        include "/dl/API/schedule2/model/".$className.".php";
+        include ROOT.$className.".php";
     }else{
         //以后有需要添加
     }

@@ -55,6 +55,8 @@ class ScheduleController extends TopController {
         }
         $this-> returnMessage($result,"请求所有用户行程的数据success",200);
     }
+
+    //得到某人的一个行程的简介
     public function getOneAction(){
 
         if(empty($_POST['id'])||empty($_POST['zid'])){
@@ -148,6 +150,27 @@ class ScheduleController extends TopController {
         $this->returnMessage($result,"删除行程成功",208);
 
     }
+    /*//根据xid显示要修改的行程描述
+    public function showOneAction(){
+        if(empty($_POST['xid'])){
+            $this->returnMessage(null,"xid不能为空"     ,-279);
+        }elseif(!is_numeric($_POST['xid'])){
+            $this->returnMessage(null,"xid必须是数字",-275);
+        }
+        $xid=$_POST['xid'];
+        //使用post请求接口
+        //请求的地址
+        $url="http://www.you.com/API/schedule2/model/start.php";
+        $data="table=xingcheng&function=showOne&xid=$xid";
+        //使用post请求接口
+        $result=$this->curlPost($url,$data);
+//       var_dump($result);var_dump($data);die;
+        $result=json_decode($result,true);
+        if(empty($result)){
+            $this->returnMessage(null,"显示此商户from表单失败",-257);
+        }
+        $this->returnMessage($result,"显示此商户from表单成功",257);
+    }*/
 
     //根据某个人的xid更新修改某条行程描述
     public function updateOneAction(){

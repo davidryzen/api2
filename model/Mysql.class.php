@@ -69,8 +69,11 @@ class Mysql{
 	 * @return 返回一个该字段的值
 	 */
 	public function getOne($sql){
+
 		$result = $this->query($sql);
+
 		$row = mysqli_fetch_row($result);
+
 		if ($row) {
 			return $row[0];
 		} else {
